@@ -1,6 +1,5 @@
 import Experience from "../Experience.js";
-import Environment from "./Environment.js";
-import TestScene from "./TestScene.js";
+import MorphingObjects from "./MorphingObjects.js";
 
 export default class World {
   constructor() {
@@ -11,19 +10,19 @@ export default class World {
 
     // Wait for resources
     this.resources.on("ready", () => {
-      // Set up
-      this.testScene = new TestScene();
-
-      // Should be the last
-      this.environment = new Environment();
+      this.morphingObjects = new MorphingObjects();
     });
   }
 
-  resize() {}
+  resize() {
+    if (this.morphingObjects) {
+      this.morphingObjects.resize();
+    }
+  }
 
   update() {
-    if (this.testScene) {
-      this.testScene.update();
+    if (this.morphingObjects) {
+      this.morphingObjects.update();
     }
   }
 }
