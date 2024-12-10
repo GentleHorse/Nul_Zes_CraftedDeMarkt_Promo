@@ -241,5 +241,7 @@ export default class MorphingObjects {
     );
   }
 
-  update() {}
+  update() {
+    this.points.rotation.y = this.time.elapsed / 1000 * 0.25;
+  }
 }
