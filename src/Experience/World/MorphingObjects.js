@@ -35,7 +35,7 @@ export default class MorphingObjects {
     this.models = this.resources.items.morphingModels;
 
     // Current model index
-    this.index = 0;
+    this.index = 5;
 
     // Position array of models
     const positions = this.models.scene.children.map((child) => {
@@ -205,12 +205,12 @@ export default class MorphingObjects {
 
     // Debug GUI
     if (this.debug.active) {
+      this.debugFolder.add(this, "morph5").name("Ambience of Light");
       this.debugFolder.add(this, "morph0").name("Glass Flower Vase");
       this.debugFolder.add(this, "morph1").name("Hokkori");
       this.debugFolder.add(this, "morph2").name("Ceramic Pourer A");
       this.debugFolder.add(this, "morph3").name("Ceramic Pourer B");
       this.debugFolder.add(this, "morph4").name("Ceramic Pourer C");
-      this.debugFolder.add(this, "morph5").name("Ambience of Light");
     }
   }
 
