@@ -196,13 +196,21 @@ export default class MorphingObjects {
     this.morph3 = () => {
       this.morph(3);
     };
+    this.morph4 = () => {
+      this.morph(4);
+    };
+    this.morph5 = () => {
+      this.morph(5);
+    };
 
     // Debug GUI
     if (this.debug.active) {
-      this.debugFolder.add(this, "morph0").name("Torus");
-      this.debugFolder.add(this, "morph1").name("Suzanne");
-      this.debugFolder.add(this, "morph2").name("Sphere");
-      this.debugFolder.add(this, "morph3").name("Three.js");
+      this.debugFolder.add(this, "morph0").name("Glass Flower Vase");
+      this.debugFolder.add(this, "morph1").name("Hokkori");
+      this.debugFolder.add(this, "morph2").name("Ceramic Pourer A");
+      this.debugFolder.add(this, "morph3").name("Ceramic Pourer B");
+      this.debugFolder.add(this, "morph4").name("Ceramic Pourer C");
+      this.debugFolder.add(this, "morph5").name("Ambience of Light");
     }
   }
 

@@ -8,6 +8,11 @@
 
 <br />
 
-- [Instagram post 01](https://www.instagram.com/p/DCyhOnZsDAX/) 
-- [Instagram post 02](https://www.instagram.com/p/DDR4e4PM9Rb/?img_index=1) 
+- [Instagram post 01](https://www.instagram.com/p/DCyhOnZsDAX/)
+- [Instagram post 02](https://www.instagram.com/p/DDR4e4PM9Rb/?img_index=1)
 
+## 1. 3D models
+
+- Each model should have **_almost the same amount of vertices_**
+- Each model has around 10,000 vertices
+- Models should be **_smoothed_**
