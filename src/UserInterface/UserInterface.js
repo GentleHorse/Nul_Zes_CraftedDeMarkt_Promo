@@ -97,7 +97,7 @@ export default class UserInterface {
    */
   setMarketInfo() {
     this.marketInfo = elementFromHtml(`
-      <div class="marketinfo fixed text-left text-[#F5F5F5] font-josefin-sans text-xl bottom-[40px] left-[40px]">
+      <div class="marketinfo fixed text-left text-[#F5F5F5] font-josefin-sans">
         <p>Gasfabriek 3a CP, 5613 CP Eindhoven</p>
         <p>December 14th (Sat)</p>
         <p>14:00 - 23:00</p>
@@ -105,7 +105,21 @@ export default class UserInterface {
     `);
     document.body.appendChild(this.marketInfo);
 
+    // Styling
     this.marketInfoContainer = document.querySelector(".marketinfo");
+
+    if (this.sizes.width > 768) {
+      this.marketInfoContainer.style["text-align"] = "left";
+      this.marketInfoContainer.style["font-size"] = "20px";
+      this.marketInfoContainer.style.bottom = "40px";
+      this.marketInfoContainer.style.left = "40px";
+    } else {
+      this.marketInfoContainer.style["text-align"] = "right";
+      this.marketInfoContainer.style["font-size"] = "16px";
+      this.marketInfoContainer.style.bottom = `${this.sizes.height * 0.8}px`;
+      this.marketInfoContainer.style.left = `${this.sizes.width * 0.25}px`;
+    }
+
   }
 
   /**
@@ -131,14 +145,21 @@ export default class UserInterface {
     this.leftArrowButton = document.querySelector("button.leftarrow");
     this.leftArrowButton.style.width = `${this.sizes.height * 0.15}px`;
     this.leftArrowButton.style.height = `${this.sizes.height * 0.15}px`;
-    this.leftArrowButton.style.left = "85px";
     this.leftArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
 
     this.rightArrowButton = document.querySelector("button.rightarrow");
     this.rightArrowButton.style.width = `${this.sizes.height * 0.15}px`;
     this.rightArrowButton.style.height = `${this.sizes.height * 0.15}px`;
-    this.rightArrowButton.style.right = "85px";
     this.rightArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
+
+
+    if (this.sizes.width > 768) {
+      this.leftArrowButton.style.left = "85px";
+      this.rightArrowButton.style.right = "85px";
+    } else {
+      this.leftArrowButton.style.left = "20px";
+      this.rightArrowButton.style.right = "20px";
+    }
   }
 
   /**
