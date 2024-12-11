@@ -16,26 +16,18 @@ export default class Interface {
   }
 
   setInstance() {
-    this.instance = elementFromHtml(`
-        <div class="interface">
-            <h1 class="title">Interface</h1>
-        </div>
-    `);
-    document.body.appendChild(this.instance);
-
-    this.interface = document.querySelector(".interface");
-    this.interface.style.position = "fixed";
-    this.interface.style.zIndex = 10;
-    this.interface.style.top = `${this.sizes.height / 2}px`;
-    this.interface.style.left = `${this.sizes.width / 2}px`;
-
     this.setMyIcon();
-    this.setDragMouseIcon();
+
+    if (this.sizes.width > 768) {
+      this.setDragMouseIcon();
+    } else {
+      this.setDragFingersIcon();
+    }
   }
 
   setMyIcon() {
     this.myIcon = elementFromHtml(`
-        <a href="https://toshihito-endo.com/" class="fixed w-14 ml-7 mt-7 ">
+        <a href="https://toshihito-endo.com/" class="fixed z-10 w-14 ml-7 mt-7 ">
            <img src="./images/icons/my-icon-white.svg" />
         </a>
     `);
@@ -44,26 +36,70 @@ export default class Interface {
 
   setDragMouseIcon() {
     this.dragMouseIcon = elementFromHtml(`
-        <div class="mouse fixed w-[250px]">
+        <div class="mouse fixed z-10 w-[200px]">
            <img src="./images/icons/drag-mouse.svg" />
-           <p class="text-[#F5F5F5] w-full text-center mt-4 font-josefin-sans">
+           <p class="text-[#F5F5F5] w-full text-center mt-2 font-inria-sans-regular text-md">
               Drag to rotate the model
            </p>
         </div>
-    `)
+    `);
     document.body.appendChild(this.dragMouseIcon);
 
     this.dragMouseIconContainer = document.querySelector(".mouse");
-    this.dragMouseIconContainer.style.bottom = "40px"; 
+    this.dragMouseIconContainer.style.bottom = "40px";
+    this.dragMouseIconContainer.style.left = `${this.sizes.width / 2 - 100}px`;
+  }
+
+  removeDragMouseIcon() {
+    if (!document.querySelector(".mouse")) return;
+
+    this.dragMouseIcon.remove();
   }
 
   setDragFingersIcon() {
+    this.dragFingersIcon = elementFromHtml(`
+      <div class="fingers fixed z-10 w-[160px]">
+         <img src="./images/icons/drag-fingers.svg" />
+         <p class="text-[#F5F5F5] w-full text-center mt-2 font-inria-sans-regular text-sm">
+            Drag to rotate the model
+         </p>
+      </div>
+  `);
+    document.body.appendChild(this.dragFingersIcon);
 
+    this.dragFingersIconContainer = document.querySelector(".fingers");
+    this.dragFingersIconContainer.style.bottom = "40px";
+    this.dragFingersIconContainer.style.left = `${this.sizes.width / 2 - 80}px`;
+  }
+
+  removeDragFingersIcon() {
+    if (!document.querySelector(".fingers")) return;
+
+    this.dragFingersIcon.remove();
   }
 
   resize() {
-    this.interface.style.top = `${this.sizes.height / 2}px`;
-    this.interface.style.left = `${this.sizes.width / 2}px`;
+    // Responsive design, switch icons depending on screen width
+    if (this.sizes.width > 768 && document.querySelector(".fingers")) {
+      this.removeDragFingersIcon();
+      this.setDragMouseIcon();
+    }
+    if (this.sizes.width <= 768 && document.querySelector(".mouse")) {
+      this.removeDragMouseIcon();
+      this.setDragFingersIcon();
+    }
+
+    // Re-position the icon to the center
+    if (this.dragMouseIcon) {
+      this.dragMouseIconContainer.style.left = `${
+        this.sizes.width / 2 - 100
+      }px`;
+    }
+    if (this.dragFingersIcon) {
+      this.dragFingersIconContainer.style.left = `${
+        this.sizes.width / 2 - 80
+      }px`;
+    }
   }
 
   update() {}
