@@ -1,6 +1,6 @@
 # Promo for "Crafted De Markt" @ Nul Zes
 
-This app is to showcase my design products which are available at the "Crafted De Markt" fair (at Nul Zes in Eindhoven, Netherlands on 14th December 2024) with a playful and cozy manner. 
+This app is to showcase my design products which are available at the "Crafted De Markt" fair (at Nul Zes in Eindhoven, Netherlands on 14th December 2024) with a playful and cozy manner.
 
 ## 0. Setup
 
@@ -64,3 +64,13 @@ Add `/#debug` to the end of the url and **_reload_** the page otherwise not work
 ### 4-6. Ceramic Pourer C
 
 ![cemranic pourer c](/static/images/products/ceramic-pourer-c.jpg)
+
+## 5. Design references
+
+### 5-1. Color palettes
+
+- [Color Palettes](https://colorpalettes.net/tag/christmas-palette/)
+- [Colors](https://coolors.co/palettes/popular/christmas)
+- [Color Hunt](https://colorhunt.co/palettes/christmas)
+- [Pixlr Blog](https://pixlr.com/blog/5-festive-color-palettes-to-use-in-your-designs-this-christmas-2/)
+- [Color Palettes](https://colorpalettes.net/tag/christmas-palette/)

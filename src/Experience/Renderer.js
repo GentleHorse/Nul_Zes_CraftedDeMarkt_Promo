@@ -25,7 +25,7 @@ export default class Renderer {
     });
 
     const rendererParameters = {};
-    rendererParameters.clearColor = "#160920";
+    rendererParameters.clearColor = "#1E2625";
 
     // Debug
     if (this.debug.active) {

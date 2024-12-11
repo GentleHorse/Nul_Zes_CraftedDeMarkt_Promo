@@ -98,14 +98,14 @@ export default class MorphingObjects {
 
   setMaterial() {
     this.materialParameters = {};
-    this.materialParameters.colorA = "#FF7300";
-    this.materialParameters.colorB = "#0091FF";
+    this.materialParameters.colorA = "#830E10";
+    this.materialParameters.colorB = "#FCCA6F";
 
     this.material = new THREE.ShaderMaterial({
       vertexShader: particlesVertexShader,
       fragmentShader: particlesFragmentShader,
       uniforms: {
-        uSize: new THREE.Uniform(0.3),
+        uSize: new THREE.Uniform(0.4),
         uResolution: new THREE.Uniform(
           new THREE.Vector2(
             this.sizes.width * this.sizes.pixelRatio,
