@@ -72,7 +72,7 @@ export default class Interface {
   setDragFingersIcon() {
     this.dragFingersIcon = elementFromHtml(`
       <div class="fingers fixed z-10 w-[160px]">
-         <img src="./images/icons/drag-fingers.svg" />
+         <img src="./images/icons/drag-fingers-v2.svg" class="w-5/6" />
          <p class="text-[#F5F5F5] w-full text-center mt-2 font-inria-sans-regular text-sm">
             Drag to rotate the model
          </p>
