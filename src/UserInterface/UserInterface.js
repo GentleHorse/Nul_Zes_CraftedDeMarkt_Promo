@@ -1,7 +1,7 @@
 import Experience from "../Experience/Experience.js";
 import elementFromHtml from "../Experience/elementFromHtml.js";
 
-export default class Interface {
+export default class UserInterface {
   constructor() {
     this.experience = new Experience();
     this.sizes = this.experience.sizes;

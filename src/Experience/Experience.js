@@ -7,7 +7,7 @@ import Renderer from "./Renderer.js";
 import Resources from "./Utils/Resources.js";
 import sources from "./sources.js";
 import World from "./World/World.js";
-import Interface from "../Interface/interface.js";
+import UserInterface from "../UserInterface/UserInterface.js";
 
 let instance = null;
 
@@ -34,7 +34,7 @@ export default class Experience {
     this.camera = new Camera();
     this.renderer = new Renderer();
     this.world = new World();
-    this.interface = new Interface();
+    this.interface = new UserInterface();
 
     // Resize
     this.sizes.on("resize", () => {
