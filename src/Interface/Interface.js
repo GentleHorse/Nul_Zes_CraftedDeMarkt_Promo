@@ -114,10 +114,14 @@ export default class Interface {
   setArrows() {
     // Add arrows to DOM
     this.leftArrow = elementFromHtml(`
-      <button class="leftarrow fixed bg-[#F5F5F5] w-28 h-28"></button>
+      <button class="leftarrow fixed">
+        <img src="./images/icons/left-arrow.svg" class="opacity-75" />
+      </button>
     `);
     this.rightArrow = elementFromHtml(`
-      <button class="rightarrow fixed bg-[#F5F5F5] w-28 h-28"></button>
+      <button class="rightarrow fixed">
+        <img src="./images/icons/right-arrow.svg" class="opacity-75" />
+      </button>
     `);
 
     document.body.appendChild(this.leftArrow);
@@ -125,10 +129,14 @@ export default class Interface {
 
     // Styling
     this.leftArrowButton = document.querySelector("button.leftarrow");
+    this.leftArrowButton.style.width = `${this.sizes.height * 0.15}px`;
+    this.leftArrowButton.style.height = `${this.sizes.height * 0.15}px`;
     this.leftArrowButton.style.left = "85px";
     this.leftArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
 
     this.rightArrowButton = document.querySelector("button.rightarrow");
+    this.rightArrowButton.style.width = `${this.sizes.height * 0.15}px`;
+    this.rightArrowButton.style.height = `${this.sizes.height * 0.15}px`;
     this.rightArrowButton.style.right = "85px";
     this.rightArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
   }
@@ -162,6 +170,20 @@ export default class Interface {
     // Re-position the arrows
     this.leftArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
     this.rightArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
+
+    if (this.sizes.width > 768) {
+      this.leftArrowButton.style.left = "85px";
+      this.rightArrowButton.style.right = "85px";
+    } else {
+      this.leftArrowButton.style.left = "20px";
+      this.rightArrowButton.style.right = "20px";
+    }
+
+    // Re-size the arrows
+    this.leftArrowButton.style.width = `${this.sizes.height * 0.15}px`;
+    this.leftArrowButton.style.height = `${this.sizes.height * 0.15}px`;
+    this.rightArrowButton.style.width = `${this.sizes.height * 0.15}px`;
+    this.rightArrowButton.style.height = `${this.sizes.height * 0.15}px`;
 
     // Re-position the market info text
     if (this.sizes.width > 768) {
