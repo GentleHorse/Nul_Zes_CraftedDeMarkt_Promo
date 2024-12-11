@@ -15,8 +15,12 @@ export default class Interface {
     this.setInstance();
   }
 
+  /**
+   * INSTANTIATE
+   */
   setInstance() {
     this.setMyIcon();
+    this.setMarketInfo();
 
     if (this.sizes.width > 768) {
       this.setDragMouseIcon();
@@ -25,6 +29,9 @@ export default class Interface {
     }
   }
 
+  /**
+   * ICON - MY DESIGN STUDIO
+   */
   setMyIcon() {
     this.myIcon = elementFromHtml(`
         <a href="https://toshihito-endo.com/" class="fixed z-10 w-14 ml-7 mt-7 ">
@@ -34,6 +41,9 @@ export default class Interface {
     document.body.appendChild(this.myIcon);
   }
 
+  /**
+   * ICON - MOUSE
+   */
   setDragMouseIcon() {
     this.dragMouseIcon = elementFromHtml(`
         <div class="mouse fixed z-10 w-[200px]">
@@ -56,6 +66,9 @@ export default class Interface {
     this.dragMouseIcon.remove();
   }
 
+  /**
+   * ICON - FINGERS
+   */
   setDragFingersIcon() {
     this.dragFingersIcon = elementFromHtml(`
       <div class="fingers fixed z-10 w-[160px]">
@@ -78,8 +91,27 @@ export default class Interface {
     this.dragFingersIcon.remove();
   }
 
+  /**
+   * MARKET INFO
+   */
+  setMarketInfo() {
+    this.marketInfo = elementFromHtml(`
+      <div class="marketinfo fixed text-left text-[#F5F5F5] font-josefin-sans text-xl bottom-[40px] left-[40px]">
+        <p>Gasfabriek 3a CP, 5613 CP Eindhoven</p>
+        <p>December 14th (Sat)</p>
+        <p>14:00 - 23:00</p>
+      </div>
+    `);
+    document.body.appendChild(this.marketInfo);
+
+    this.marketInfoContainer = document.querySelector(".marketinfo");
+  }
+
+  /**
+   * RESIZE
+   */
   resize() {
-    // Responsive design, switch icons depending on screen width
+    // Switch the drag icons depending on screen width
     if (this.sizes.width > 768 && document.querySelector(".fingers")) {
       this.removeDragFingersIcon();
       this.setDragMouseIcon();
@@ -89,7 +121,7 @@ export default class Interface {
       this.setDragFingersIcon();
     }
 
-    // Re-position the icon to the center
+    // Re-position the drag icon to the center
     if (this.dragMouseIcon) {
       this.dragMouseIconContainer.style.left = `${
         this.sizes.width / 2 - 100
@@ -100,7 +132,23 @@ export default class Interface {
         this.sizes.width / 2 - 80
       }px`;
     }
+
+    // Re-position the market info text
+    if (this.sizes.width > 768) {
+      this.marketInfoContainer.style["text-align"] = "left";
+      this.marketInfoContainer.style["font-size"] = "20px";
+      this.marketInfoContainer.style.bottom = "40px";
+      this.marketInfoContainer.style.left = "40px";
+    } else {
+      this.marketInfoContainer.style["text-align"] = "right";
+      this.marketInfoContainer.style["font-size"] = "16px";
+      this.marketInfoContainer.style.bottom = `${this.sizes.height * 0.8}px`;
+      this.marketInfoContainer.style.left = `${this.sizes.width * 0.25}px`;
+    }
   }
 
+  /**
+   * UPDATE
+   */
   update() {}
 }
