@@ -242,6 +242,6 @@ export default class MorphingObjects {
   }
 
   update() {
-    this.points.rotation.y = this.time.elapsed / 1000 * 0.25;
+    this.points.rotation.y = (-this.time.elapsed / 1000) * 0.25;
   }
 }

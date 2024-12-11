@@ -70,7 +70,9 @@ Add `/#debug` to the end of the url and **_reload_** the page otherwise not work
 ### 5-1. Color palettes
 
 - [Color Palettes](https://colorpalettes.net/tag/christmas-palette/)
+- [Pixlr Blog](https://pixlr.com/blog/5-festive-color-palettes-to-use-in-your-designs-this-christmas-2/)
 - [Colors](https://coolors.co/palettes/popular/christmas)
 - [Color Hunt](https://colorhunt.co/palettes/christmas)
-- [Pixlr Blog](https://pixlr.com/blog/5-festive-color-palettes-to-use-in-your-designs-this-christmas-2/)
-- [Color Palettes](https://colorpalettes.net/tag/christmas-palette/)
+
+
+
