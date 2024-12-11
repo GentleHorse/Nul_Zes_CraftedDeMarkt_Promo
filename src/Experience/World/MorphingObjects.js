@@ -13,12 +13,15 @@ export default class MorphingObjects {
     this.sizes = this.experience.sizes;
     this.resources = this.experience.resources;
     this.debug = this.experience.debug;
+    this.interface = this.experience.interface;
 
     if (this.debug.active) {
       this.debugFolder = this.debug.ui.addFolder("morphing models");
     }
 
     this.setInstance();
+
+    this.setArrowClickEventListeners();
   }
 
   setInstance() {
@@ -232,6 +235,31 @@ export default class MorphingObjects {
 
     // Save index
     this.index = index;
+  }
+
+  setArrowClickEventListeners() {
+    this.interface.leftArrowButton.addEventListener("click", () => {
+      this.arrowClickHandler(this.index - 1);
+    });
+    this.interface.rightArrowButton.addEventListener("click", () => {
+      this.arrowClickHandler(this.index + 1);
+    });
+  }
+
+  arrowClickHandler(index) {
+    let newIndex = index;
+
+    if (newIndex === 6){
+      newIndex = 0;
+    }
+
+    if (newIndex === -1){
+      newIndex = 5;
+    }
+
+    this.morph(newIndex);
+
+    console.log("New index: ", newIndex);
   }
 
   resize() {

@@ -21,6 +21,7 @@ export default class Interface {
   setInstance() {
     this.setMyIcon();
     this.setMarketInfo();
+    this.setArrows();
 
     if (this.sizes.width > 768) {
       this.setDragMouseIcon();
@@ -108,6 +109,31 @@ export default class Interface {
   }
 
   /**
+   * ARROWS
+   */
+  setArrows() {
+    // Add arrows to DOM
+    this.leftArrow = elementFromHtml(`
+      <button class="leftarrow fixed bg-[#F5F5F5] w-28 h-28"></button>
+    `);
+    this.rightArrow = elementFromHtml(`
+      <button class="rightarrow fixed bg-[#F5F5F5] w-28 h-28"></button>
+    `);
+
+    document.body.appendChild(this.leftArrow);
+    document.body.appendChild(this.rightArrow);
+
+    // Styling
+    this.leftArrowButton = document.querySelector("button.leftarrow");
+    this.leftArrowButton.style.left = "85px";
+    this.leftArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
+
+    this.rightArrowButton = document.querySelector("button.rightarrow");
+    this.rightArrowButton.style.right = "85px";
+    this.rightArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
+  }
+
+  /**
    * RESIZE
    */
   resize() {
@@ -132,6 +158,10 @@ export default class Interface {
         this.sizes.width / 2 - 80
       }px`;
     }
+
+    // Re-position the arrows
+    this.leftArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
+    this.rightArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
 
     // Re-position the market info text
     if (this.sizes.width > 768) {
