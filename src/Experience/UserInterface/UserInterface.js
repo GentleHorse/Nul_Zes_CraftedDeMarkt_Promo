@@ -104,6 +104,7 @@ export default class UserInterface {
   setMarketInfo() {
     this.marketInfo = elementFromHtml(`
       <div class="marketinfo fixed text-left text-[#F5F5F5] font-josefin-sans">
+        <p>“Crafted de Markt”</p>
         <p>Gasfabriek 3a CP, 5613 CP Eindhoven</p>
         <p>December 14th (Sat)</p>
         <p>14:00 - 23:00</p>
@@ -122,7 +123,7 @@ export default class UserInterface {
     } else {
       this.marketInfoContainer.style["text-align"] = "right";
       this.marketInfoContainer.style["font-size"] = "16px";
-      this.marketInfoContainer.style.bottom = `${this.sizes.height * 0.8}px`;
+      this.marketInfoContainer.style.bottom = `${this.sizes.height * 0.7}px`;
       this.marketInfoContainer.style.left = `${this.sizes.width * 0.25}px`;
     }
   }
@@ -272,7 +273,7 @@ export default class UserInterface {
     } else {
       this.marketInfoContainer.style["text-align"] = "right";
       this.marketInfoContainer.style["font-size"] = "16px";
-      this.marketInfoContainer.style.bottom = `${this.sizes.height * 0.8}px`;
+      this.marketInfoContainer.style.bottom = `${this.sizes.height * 0.7}px`;
       this.marketInfoContainer.style.left = `${this.sizes.width * 0.25}px`;
     }
 
