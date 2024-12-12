@@ -23,8 +23,7 @@ export default class MorphingObjects {
 
     this.setArrowClickEventListeners();
 
-    
-    this.interface.setProductTitle(this.interface.productsList[1]);
+    this.interface.setProductTitle(this.interface.productsList[this.index]);
   }
 
   setInstance() {
@@ -243,20 +242,26 @@ export default class MorphingObjects {
   setArrowClickEventListeners() {
     this.interface.leftArrowButton.addEventListener("click", () => {
       this.arrowClickHandler(this.index - 1);
+      this.interface.changeProductTitle(
+        this.interface.productsList[this.index]
+      );
     });
     this.interface.rightArrowButton.addEventListener("click", () => {
       this.arrowClickHandler(this.index + 1);
+      this.interface.changeProductTitle(
+        this.interface.productsList[this.index]
+      );
     });
   }
 
   arrowClickHandler(index) {
     let newIndex = index;
 
-    if (newIndex === 6){
+    if (newIndex === 6) {
       newIndex = 0;
     }
 
-    if (newIndex === -1){
+    if (newIndex === -1) {
       newIndex = 5;
     }
 

@@ -194,6 +194,12 @@ export default class UserInterface {
     }
   }
 
+  changeProductTitle(title){
+    if (!document.querySelector(".title")) return;
+
+    this.productTitle.innerHTML = title;
+  }
+
   /**
    * RESIZE
    */
