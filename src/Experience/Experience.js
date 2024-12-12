@@ -36,7 +36,10 @@ export default class Experience {
     this.renderer = new Renderer();
     this.world = new World();
     this.interface = new UserInterface();
-    this.stats = new StatusMonitor();
+
+    if (this.debug.active) {
+      this.stats = new StatusMonitor();
+    }
 
     // Resize
     this.sizes.on("resize", () => {
@@ -64,7 +67,9 @@ export default class Experience {
     this.world.update();
 
     // Stats
-    this.stats.update();
+    if (this.debug.active) {
+      this.stats.update();
+    }
 
     // Renderer should be the last
     this.renderer.update();
