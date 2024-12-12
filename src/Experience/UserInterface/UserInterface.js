@@ -1,5 +1,6 @@
 import Experience from "../Experience.js";
 import elementFromHtml from "../elementFromHtml.js";
+import gsap from "gsap";
 
 export default class UserInterface {
   constructor() {
@@ -194,10 +195,27 @@ export default class UserInterface {
     }
   }
 
-  changeProductTitle(title){
+  changeProductTitle(title) {
     if (!document.querySelector(".title")) return;
 
-    this.productTitle.innerHTML = title;
+    const fadingSeconds = 1.0;
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      this.productTitle,
+      { opacity: 1 },
+      { opacity: 0, duration: fadingSeconds, ease: "power1.inOut" }
+    );
+
+    setTimeout(() => {
+      this.productTitle.innerHTML = title;
+    }, fadingSeconds * 1000);
+
+    tl.fromTo(
+      this.productTitle,
+      { opacity: 0 },
+      { opacity: 1, duration: fadingSeconds, ease: "power1.inOut" }
+    );
   }
 
   /**
