@@ -7,7 +7,8 @@ import Renderer from "./Renderer.js";
 import Resources from "./Utils/Resources.js";
 import sources from "./sources.js";
 import World from "./World/World.js";
-import UserInterface from "../UserInterface/UserInterface.js";
+import UserInterface from "./UserInterface/UserInterface.js";
+import StatusMonitor from "./Utils/StatusMonitor.js";
 
 let instance = null;
 
@@ -35,6 +36,7 @@ export default class Experience {
     this.renderer = new Renderer();
     this.world = new World();
     this.interface = new UserInterface();
+    this.stats = new StatusMonitor();
 
     // Resize
     this.sizes.on("resize", () => {
@@ -60,6 +62,9 @@ export default class Experience {
     this.interface.update();
     this.camera.update();
     this.world.update();
+
+    // Stats
+    this.stats.update();
 
     // Renderer should be the last
     this.renderer.update();
