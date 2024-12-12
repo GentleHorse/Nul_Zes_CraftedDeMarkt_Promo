@@ -8,9 +8,14 @@ export default class UserInterface {
     this.time = this.experience.time;
     this.debug = this.experience.debug;
 
-    if (this.debug.active) {
-      this.debugFolder = this.debug.ui.addFolder("interface");
-    }
+    this.productsList = [
+      "Glass Flower Vase",
+      "Hokkori",
+      "Ceramic Pourer A",
+      "Ceramic Pourer B",
+      "Ceramic Pourer C",
+      "Ambience of Light",
+    ];
 
     this.setInstance();
   }
@@ -119,7 +124,6 @@ export default class UserInterface {
       this.marketInfoContainer.style.bottom = `${this.sizes.height * 0.8}px`;
       this.marketInfoContainer.style.left = `${this.sizes.width * 0.25}px`;
     }
-
   }
 
   /**
@@ -143,22 +147,50 @@ export default class UserInterface {
 
     // Styling
     this.leftArrowButton = document.querySelector("button.leftarrow");
-    this.leftArrowButton.style.width = `${this.sizes.height * 0.15}px`;
-    this.leftArrowButton.style.height = `${this.sizes.height * 0.15}px`;
-    this.leftArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
+    this.leftArrowButton.style.width = `${this.sizes.height * 0.1}px`;
+    this.leftArrowButton.style.height = `${this.sizes.height * 0.1}px`;
 
     this.rightArrowButton = document.querySelector("button.rightarrow");
-    this.rightArrowButton.style.width = `${this.sizes.height * 0.15}px`;
-    this.rightArrowButton.style.height = `${this.sizes.height * 0.15}px`;
-    this.rightArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
-
+    this.rightArrowButton.style.width = `${this.sizes.height * 0.1}px`;
+    this.rightArrowButton.style.height = `${this.sizes.height * 0.1}px`;
 
     if (this.sizes.width > 768) {
       this.leftArrowButton.style.left = "85px";
       this.rightArrowButton.style.right = "85px";
+      this.leftArrowButton.style.top = `${this.sizes.height / 2 - 36}px`;
+      this.rightArrowButton.style.top = `${this.sizes.height / 2 - 36}px`;
     } else {
-      this.leftArrowButton.style.left = "20px";
-      this.rightArrowButton.style.right = "20px";
+      this.leftArrowButton.style.left = "5px";
+      this.rightArrowButton.style.right = "5px";
+      this.leftArrowButton.style.top = `${this.sizes.height * 0.46}px`;
+      this.rightArrowButton.style.top = `${this.sizes.height * 0.46}px`;
+    }
+  }
+
+  /**
+   * PRODUCT TITLE
+   */
+  setProductTitle(title) {
+    this.title = elementFromHtml(`
+      <h1 class="title select-none fixed font-playfair text-center">${title}</h1>  
+    `);
+    document.body.appendChild(this.title);
+
+    this.productTitle = document.querySelector("h1.title");
+    this.productTitle.style.color = "#DD2255";
+
+    if (this.sizes.width > 768) {
+      this.productTitle.style.fontSize = "72px";
+      this.productTitle.style.top = `${this.sizes.height / 2 - 36}px`;
+      this.productTitle.style.width = "50%";
+      this.productTitle.style["margin-left"] = `${this.sizes.width * 0.25}px`;
+      this.productTitle.style["margin-right"] = `${this.sizes.width * 0.25}px`;
+    } else {
+      this.productTitle.style.fontSize = "20px";
+      this.productTitle.style.top = `${this.sizes.height / 2 - 12.5}px`;
+      this.productTitle.style.width = "60%";
+      this.productTitle.style["margin-left"] = `${this.sizes.width * 0.2}px`;
+      this.productTitle.style["margin-right"] = `${this.sizes.width * 0.2}px`;
     }
   }
 
@@ -189,22 +221,23 @@ export default class UserInterface {
     }
 
     // Re-position the arrows
-    this.leftArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
-    this.rightArrowButton.style.top = `${this.sizes.height / 2 - 42.5}px`;
-
     if (this.sizes.width > 768) {
       this.leftArrowButton.style.left = "85px";
       this.rightArrowButton.style.right = "85px";
+      this.leftArrowButton.style.top = `${this.sizes.height / 2 - 36}px`;
+      this.rightArrowButton.style.top = `${this.sizes.height / 2 - 36}px`;
     } else {
-      this.leftArrowButton.style.left = "20px";
-      this.rightArrowButton.style.right = "20px";
+      this.leftArrowButton.style.left = "5px";
+      this.rightArrowButton.style.right = "5px";
+      this.leftArrowButton.style.top = `${this.sizes.height * 0.46}px`;
+      this.rightArrowButton.style.top = `${this.sizes.height * 0.46}px`;
     }
 
     // Re-size the arrows
-    this.leftArrowButton.style.width = `${this.sizes.height * 0.15}px`;
-    this.leftArrowButton.style.height = `${this.sizes.height * 0.15}px`;
-    this.rightArrowButton.style.width = `${this.sizes.height * 0.15}px`;
-    this.rightArrowButton.style.height = `${this.sizes.height * 0.15}px`;
+    this.leftArrowButton.style.width = `${this.sizes.height * 0.1}px`;
+    this.leftArrowButton.style.height = `${this.sizes.height * 0.1}px`;
+    this.rightArrowButton.style.width = `${this.sizes.height * 0.1}px`;
+    this.rightArrowButton.style.height = `${this.sizes.height * 0.1}px`;
 
     // Re-position the market info text
     if (this.sizes.width > 768) {
@@ -217,6 +250,21 @@ export default class UserInterface {
       this.marketInfoContainer.style["font-size"] = "16px";
       this.marketInfoContainer.style.bottom = `${this.sizes.height * 0.8}px`;
       this.marketInfoContainer.style.left = `${this.sizes.width * 0.25}px`;
+    }
+
+    // Re-position & resize the product title
+    if (this.sizes.width > 768) {
+      this.productTitle.style.fontSize = "72px";
+      this.productTitle.style.top = `${this.sizes.height / 2 - 36}px`;
+      this.productTitle.style.width = "50%";
+      this.productTitle.style["margin-left"] = `${this.sizes.width * 0.25}px`;
+      this.productTitle.style["margin-right"] = `${this.sizes.width * 0.25}px`;
+    } else {
+      this.productTitle.style.fontSize = "25px";
+      this.productTitle.style.top = `${this.sizes.height / 2 - 12.5}px`;
+      this.productTitle.style.width = "60%";
+      this.productTitle.style["margin-left"] = `${this.sizes.width * 0.2}px`;
+      this.productTitle.style["margin-right"] = `${this.sizes.width * 0.2}px`;
     }
   }
 

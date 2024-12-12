@@ -22,6 +22,9 @@ export default class MorphingObjects {
     this.setInstance();
 
     this.setArrowClickEventListeners();
+
+    
+    this.interface.setProductTitle(this.interface.productsList[1]);
   }
 
   setInstance() {

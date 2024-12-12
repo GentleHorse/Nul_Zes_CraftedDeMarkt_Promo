@@ -56,7 +56,7 @@ export default class FireFlies {
 
   setMaterial() {
     this.materialParameters = {};
-    this.materialParameters.color = "#FCCA6F";
+    this.materialParameters.color = "#FFF5D5";
 
     this.material = new THREE.ShaderMaterial({
       vertexShader: firefliesVertexShader,
