@@ -41,7 +41,7 @@ export default class UserInterface {
    */
   setMyIcon() {
     this.myIcon = elementFromHtml(`
-        <a href="https://toshihito-endo.com/" class="fixed z-10 w-14 ml-7 mt-7 ">
+        <a href="https://toshihito-endo.com/" class="fixed z-10 w-10 ml-7 mt-7 ">
            <img src="./images/icons/my-icon-white.svg" />
         </a>
     `);
@@ -188,7 +188,7 @@ export default class UserInterface {
       this.productTitle.style["margin-left"] = `${this.sizes.width * 0.25}px`;
       this.productTitle.style["margin-right"] = `${this.sizes.width * 0.25}px`;
     } else {
-      this.productTitle.style.fontSize = "20px";
+      this.productTitle.style.fontSize = "28px";
       this.productTitle.style.top = `${this.sizes.height / 2 - 12.5}px`;
       this.productTitle.style.width = "60%";
       this.productTitle.style["margin-left"] = `${this.sizes.width * 0.2}px`;
@@ -285,7 +285,7 @@ export default class UserInterface {
       this.productTitle.style["margin-left"] = `${this.sizes.width * 0.25}px`;
       this.productTitle.style["margin-right"] = `${this.sizes.width * 0.25}px`;
     } else {
-      this.productTitle.style.fontSize = "25px";
+      this.productTitle.style.fontSize = "28px";
       this.productTitle.style.top = `${this.sizes.height / 2 - 12.5}px`;
       this.productTitle.style.width = "60%";
       this.productTitle.style["margin-left"] = `${this.sizes.width * 0.2}px`;
