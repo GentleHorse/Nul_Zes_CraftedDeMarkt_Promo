@@ -1,8 +1,16 @@
 # Promo for "Crafted De Markt" @ Nul Zes
 
-![screenshot 01](/static/images/screenshots/screenshot01.jpg =800x455) <br />
-![screenshot 02](/static/images/screenshots/screenshot02.jpg =800x455) <br />
-![app demo gif](/static/images/screenshots/app-demo.gif =800x430) <br />
+<div style="width:800px; height:455px">
+![screenshot 01](/static/images/screenshots/screenshot01.jpg)
+</div><br />
+
+<div style="width:800px; height:455px">
+![screenshot 02](/static/images/screenshots/screenshot02.jpg)
+</div><br />
+
+<div style="width:800px; height:430px">
+![app demo gif](/static/images/screenshots/app-demo.gif)
+</div><br />
 
 This app is to showcase my design products which are available at the "Crafted De Markt" fair (at Nul Zes in Eindhoven, Netherlands on 14th December 2024) with a playful and cozy manner.
 
