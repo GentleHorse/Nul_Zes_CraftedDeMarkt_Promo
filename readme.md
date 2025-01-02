@@ -1,5 +1,9 @@
 # Promo for "Crafted De Markt" @ Nul Zes
 
+![screenshot 01](/static/images/screenshots/screenshot01.jpg) <br />
+![screenshot 02](/static/images/screenshots/screenshot02.jpg) <br />
+![app demo gif](/static/images/screenshots/app-demo.gif) <br />
+
 This app is to showcase my design products which are available at the "Crafted De Markt" fair (at Nul Zes in Eindhoven, Netherlands on 14th December 2024) with a playful and cozy manner.
 
 ## 0. Setup
@@ -74,6 +78,3 @@ Add `/#debug` to the end of the url and **_reload_** the page otherwise not work
 - [Colors](https://coolors.co/palettes/popular/christmas)
 - [Color Hunt](https://colorhunt.co/palettes/christmas)
 - [Nippon Colors](https://nipponcolors.com/)
-
-
-
